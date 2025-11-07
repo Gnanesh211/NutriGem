@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017')
+mongoose.connect('mongodb+srv://karshvarth2112_db_user:WCmFzBzlJKF55mWj@esearch.masx8l9.mongodb.net/?retryWrites=true&w=majority&appName=ESearch')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 
