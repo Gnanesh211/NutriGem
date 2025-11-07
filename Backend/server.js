@@ -1,20 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-import path from "path";
 const bodyParser = require('body-parser');
-import { fileURLToPath } from "url";
 const app = express();
 const PORT = 5000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "client/dist"))); // or "frontend/build" depending on your setup
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
-});
+
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://karshvarth2112_db_user:WCmFzBzlJKF55mWj@esearch.masx8l9.mongodb.net/?appName=ESearch')
   .then(() => console.log("✅ MongoDB Atlas connected"))
